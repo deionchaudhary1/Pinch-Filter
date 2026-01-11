@@ -1,0 +1,13 @@
+create a 3 finger scroll that the camera could recognize in order to move between different spaces
+create a pinch motion to move between and create tabs
+create a finger distortion camera (like ones in the DS)
+
+^create a whole directory of settings the user can toggle from\
+
+FOR PIE
+- create a system in which we can detect is robots are blocking each other (they are too close)
+    - technically, this can be done without AI, if we add location devices to each robot (however, with AI its faster)
+
+WITH ARDUINO
+- create a brightness sensor that changes the brightness of the computer (or goes to night mode), based on the brightness reading on the arduino
+- can technically also do this with openCV
