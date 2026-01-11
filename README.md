@@ -64,3 +64,23 @@ Run the application
 ```bash
 python pinch_filter.py
 ```
+
+## Controls and Effects
+
+# Controls
+Gesture Controls: Two-hand pinch → Create and control the effect box
+
+Key	Action
+1	Gaussian Blur
+2	Camera Blur
+3	Lens Zoom
+4	Swirl
+[	Previous effect
+]	Next effect
+ESC	Exit application
+
+# Effects
+Gaussian Blur: Applies a strong Gaussian blur to smooth the selected region.
+Camera Blur: Simulates a camera focus effect with a soft transition into the blurred area.
+Lens Zoom: Magnifies the contents of the box, mimicking a zoom lens effect.
+Swirl: Applies a rotational swirl distortion centered within the bounding box.
