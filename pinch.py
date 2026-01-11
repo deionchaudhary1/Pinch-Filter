@@ -95,15 +95,15 @@ def swirlEffect(frame, top_left, bottom_right, strength=2.0):
 
     frame[y1:y2, x1:x2] = swirled
 
-EFFECTS = {
-    "gauss": gaussBlur,
-    "camera": cameraBlur,
-    "lens": cameraLens,
-    "swirl": swirlEffect
-}
+EFFECTS = [
+    ("Gauss Blur", gaussBlur),
+    ("Camera Blur", cameraBlur),
+    ("Lens Zoom", cameraLens),
+    ("Swirl", swirlEffect)
+]
 
-effect_name = sys.argv[1] if len(sys.argv) > 1 else "gauss"
-effect_func = EFFECTS.get(effect_name, gaussBlur)
+current_effect = 0
+
 
 ######################
 #END OF BOX FUNCTIONS#
@@ -199,6 +199,7 @@ while cap.isOpened():
         bottom_right = (max(x1, x2), max(y1, y2))
 
         #distortion here
+        effect_name, effect_func = EFFECTS[current_effect]
         effect_func(frame, top_left, bottom_right)
         cv2.rectangle(frame, top_left, bottom_right, (255, 0, 0), 5)
 
@@ -213,9 +214,35 @@ while cap.isOpened():
         )
 
     cv2.imshow("Two-Hand Pinch Box", frame)
+    effect_name, _ = EFFECTS[current_effect]
 
-    if cv2.waitKey(1) & 0xFF == 27:
+    cv2.putText(
+        frame,
+        f"Effect: {effect_name}",
+        (20, 40),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        1.0,
+        (0, 255, 255),
+        2
+    )
+
+
+    key = cv2.waitKey(1) & 0xFF
+
+    if key == 27:  # ESC
         break
+
+    elif key == ord(']'):
+        current_effect = (current_effect + 1) % len(EFFECTS)
+
+    elif key == ord('['):
+        current_effect = (current_effect - 1) % len(EFFECTS)
+
+    elif key in [ord('1'), ord('2'), ord('3'), ord('4')]:
+        idx = key - ord('1')
+        if idx < len(EFFECTS):
+            current_effect = idx
+
 
 cap.release()
 cv2.destroyAllWindows()
