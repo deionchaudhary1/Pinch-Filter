@@ -70,20 +70,21 @@ python pinch_filter.py
 ### Controls
 Gesture Controls: Two-hand pinch → Create and control the effect box
 
-Key	Action
-1	Gaussian Blur
+#### Key Action
 
-2	Camera Blur
+1 -> Gaussian Blur
 
-3	Lens Zoom
+2 -> Camera Blur
 
-4	Swirl
+3 -> Lens Zoom
 
-[	Previous effect
+4 -> Swirl
 
-]	Next effect
+[ -> Previous effect
 
-ESC	Exit application
+] -> Next effect
+
+ESC -> Exit application
 
 ### Effects
 Gaussian Blur: Applies a strong Gaussian blur to smooth the selected region.
