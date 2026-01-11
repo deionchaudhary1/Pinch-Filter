@@ -51,13 +51,16 @@ Create and activate a virtual environment (recommended):
 ```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
+```
 
 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
+```
 
 Run the application
 
 ```bash
 python pinch_filter.py
+```
