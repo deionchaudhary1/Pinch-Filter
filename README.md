@@ -35,7 +35,6 @@ By pinching with both hands, users can define a bounding box on the webcam feed 
 - **Python 3.11**
 - **OpenCV**
 - **MediaPipe**
-- **NumPy**
 
 ---
 
@@ -46,3 +45,19 @@ Clone the repository:
 ```bash
 git clone https://github.com/your-username/pinch-filter.git
 cd pinch-filter
+
+Create and activate a virtual environment (recommended):
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
+Run the application
+
+```bash
+python pinch_filter.py
